@@ -1,7 +1,19 @@
 """
-model.py
+models.py
+
+This file serves as the core model for the pharmacokinetic ODE models used across all paper 
+reproductions.
+
+What is included in these files:
+1. A one-compartment baseline model
+2. A two-compartment amiodarone model
 """
 
+# Importing in needed libraries 
+import numpy as np
+from constants import CL, VC, VP, Q
+
+# The one-compartment baseline model 
 def first_compartment(t, C, CL, V):
     """
     The first compartment of the model for just one case. 
@@ -17,6 +29,7 @@ def first_compartment(t, C, CL, V):
     """
     return -(CL / V) * C
 
+# The two-compartment baseline model 
 def second_compartment(t, y, CL, Vc, Vp, Q):
     """
     The second comparment model for when there are two cases.

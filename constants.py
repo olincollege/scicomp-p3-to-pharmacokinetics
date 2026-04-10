@@ -2,7 +2,8 @@
 constants.py
 
 This file stores all of the pharmacokinetic constants and simulation defaults used across
-the the papers that we reading and benchmarking off of: Siddoway et al. (1996) and Brodan et al. (1982) amiodarone papers.
+the the papers that we reading and benchmarking off of: Siddoway et al. (1996) and 
+Brodan et al. (1982) amiodarone papers.
 
 Keeping these values centralized makes it easier to:
 - reproduce published benchmark curves
