@@ -27,7 +27,7 @@ def second_compartment(t, y, CL, Vc, Vp, Q):
                   Cp = peripheral compartment concentration
         Cl (float): the clearance
         Vc (float): the measured central volume
-        Vp (float): the measured perceptral volume 
+        Vp (float): the measured perceptual volume 
         Q (float): the inter-compartmental volume that is measured 
     
     Returns:
