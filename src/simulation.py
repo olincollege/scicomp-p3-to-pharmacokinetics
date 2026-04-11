@@ -4,12 +4,10 @@ simulation.py
 This file will help us run the pharmacokinetic simulations using ODE models
 """
 
-# ------------------------------------------------------------------------------------
-
 # Importing in needed libraries
 import numpy as np
 from scipy.integrate import solve_ivp
-from constants import (
+from src.constants import (
     TIME_START,
     TIME_END,
     NUM_POINTS,
@@ -20,9 +18,7 @@ from constants import (
     Vp,
     Q,
 )
-from models import first_compartment, second_compartment
-
-# ------------------------------------------------------------------------------------
+from src.models import first_compartment, second_compartment
 
 
 # Using the one-compartmental model to go through the simulation
@@ -47,9 +43,6 @@ def run_first_compartment():
     )
 
     return solution.t, solution.y[0]
-
-
-# ------------------------------------------------------------------------------------
 
 
 def run_second_compartment():

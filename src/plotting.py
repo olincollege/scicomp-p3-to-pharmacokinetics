@@ -31,9 +31,6 @@ def plot_first_comparemental_model(t, concentration):
     plt.show()
 
 
-# ------------------------------------------------------------------------------------
-
-
 # Second model plotting for two
 def plot_second_compartment(t, central, peripheral):
     """
