@@ -9,9 +9,13 @@ What is included in these files:
 2. A two-compartment amiodarone model
 """
 
+# ------------------------------------------------------------------------------------
+
 # Importing in needed libraries
 import numpy as np
 from constants import CL, Vc, Vp, Q
+
+# ------------------------------------------------------------------------------------
 
 
 # The one-compartment baseline model
@@ -29,6 +33,9 @@ def first_compartment(t, C, CL, V):
         The rate of of change of the concentration that we are measuring
     """
     return -(CL / V) * C
+
+
+# ------------------------------------------------------------------------------------
 
 
 # The two-compartment baseline model
