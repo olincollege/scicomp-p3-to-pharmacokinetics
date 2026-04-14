@@ -11,7 +11,7 @@ What is included in these files:
 
 # Importing in needed libraries
 import numpy as np
-from src.constants import CL, Vc, Vp, Q
+from constants import CL, Vc, Vp, Q
 
 
 # The one-compartment baseline model

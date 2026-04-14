@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 # First model plotting just for One
-def plot_first_comparemental_model(t, concentration):
+def plot_first_compartment(t, concentration):
     """
     This function will plot one-compartmental baseline curve.
 
