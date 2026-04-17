@@ -3,6 +3,7 @@ main.py
 
 Main runner for SciComp Project 3:
 reproducing amiodarone pharmacokinetic paper benchmarks.
+Make sure to run export MPLBACKEND=TkAgg
 """
 
 # Importing in Needed Libraries
