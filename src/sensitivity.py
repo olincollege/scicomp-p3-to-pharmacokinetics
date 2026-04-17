@@ -7,7 +7,7 @@ This file contains the sensitivity analysis for pharmacokinetic model robustness
 # Importing in Needed Libraries
 import numpy as np
 
-from constants import CL, Vc, Vc, Q
+from constants import CL, Vc, Vp, Q
 from simulation import run_second_compartment
 
 
@@ -41,8 +41,8 @@ def run_sensitivity():
 
     for name, value in {
         "CL": CL,
-        "VC": VC,
-        "VP": VP,
+        "Vc": Vc,
+        "Vp": Vp,
         "Q": Q,
     }.items():
 
