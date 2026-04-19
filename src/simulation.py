@@ -33,16 +33,18 @@ def run_first_compartment():
         A tuple with the time points and concentration values
     """
     t_eval = np.linspace(TIME_START, TIME_END, NUM_POINTS)
+    y0 = [INITIAL_CENTRAL]  # Added in dosage initial amounts
 
     solution = solve_ivp(
         first_compartment,
         [TIME_START, TIME_END],
-        [INITIAL_CENTRAL],
+        y0,
         args=(CL, Vc),
         t_eval=t_eval,
     )
+    concentration = solution.y[0] / Vc
 
-    return solution.t, solution.y[0]
+    return solution.t, concentration
 
 
 def run_second_compartment():
@@ -59,15 +61,16 @@ def run_second_compartment():
     """
     t_eval = np.linspace(TIME_START, TIME_END, NUM_POINTS)
 
+    y0 = [INITIAL_CENTRAL, INITIAL_PERIPHERAL]  # Added in dosage initial amounts
     solution = solve_ivp(
         second_compartment,
         [TIME_START, TIME_END],
-        [INITIAL_CENTRAL, INITIAL_PERIPHERAL],
+        y0,
         args=(CL, Vc, Vp, Q),
         t_eval=t_eval,
     )
 
-    central = solution.y[0]
-    peripheral = solution.y[1]
+    central = solution.y[0] / Vc
+    peripheral = solution.y[1] / Vp
 
     return solution.t, central, peripheral
