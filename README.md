@@ -63,7 +63,7 @@
 ## 9. Usage
 
 
-# 10. Dependencies
+## 10. Dependencies
 
 
-# 11. References
+## 11. References
