@@ -15,20 +15,22 @@ from constants import CL, Vc, Vp, Q
 
 
 # The one-compartment baseline model
-def first_compartment(t, C, CL, V):
+def first_compartment(t, A, CL, V):
     """
     The first compartment of the model for just one case.
 
     Args:
         t (float): time measured in hours
-        C (float): the drug concentration in central compartment
+        A (list): [Ac] amount in central compartment
         Cl (float): the clearance being measured
         V (float): the measured volume of the distribution
 
     Returns:
-        The rate of of change of the concentration that we are measuring
+        A list of [dAc/dt]
     """
-    return -(CL / V) * C
+    Ac = A[0]
+    dAc_dt = -CL * (Ac / V)
+    return [dAc_dt]
 
 
 # The two-compartment baseline model
@@ -46,11 +48,11 @@ def second_compartment(t, y, CL, Vc, Vp, Q):
         Q (float): the inter-compartmental volume that is measured
 
     Returns:
-        An array
+        A list of [dAc_dt, dAp_dt]
     """
-    Cc, Cp = y
+    Ac, Ap = y
 
-    dCc_dt = -(CL / Vc) * Cc - (Q / Vc) * (Cc - Cp)
-    dCp_dt = (Q / Vp) * (Cc - Cp)
+    dAc_dt = -CL * (Ac / Vc) - Q * (Ac / Vc) + Q * (Ap / Vp)
+    dAp_dt = Q * (Ac / Vc) - Q * (Ap / Vp)
 
-    return [dCc_dt, dCp_dt]
+    return [dAc_dt, dAp_dt]

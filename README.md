@@ -1,3 +1,4 @@
+![alt text](image1.png)
 # Project 3: Pharmacokinetics
 ### Using models to determine how the human body reacts to drugs
 
