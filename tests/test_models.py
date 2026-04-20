@@ -16,7 +16,7 @@ def test_first_compartment_decay():
     """
     dA = first_compartment(0, [10], CL=0.2, V=1.0)
 
-    # Expect decay → derivative must be negative
+    # Expect decay to derivative must be negative
     assert dA[0] < 0
 
 
