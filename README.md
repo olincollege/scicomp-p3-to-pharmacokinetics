@@ -146,23 +146,98 @@ pharmacokinetics/
 ---
 
 ## 6. Comparison to Literature
+The model reproduces key behaviors described in:
+
+- Siddoway et al. (1996)  
+- Brodan et al. (1982)  
+
 ### Agreement
+- Clear distribution phase  
+- Clear elimination phase  
+- Drug transfer between compartments  
+<br>
 ### Differences
+- Simulated decay may be faster than reported  
+- Possible causes:
+  - simplified assumptions  
+  - parameter scaling differences  
+  - lack of biological variability  
+<br>
+
 ### Interpretation
+The model captures the **qualitative structure** of pharmacokinetics well. While exact numerical agreement may differ, the results support the validity of compartment-based modeling for drug dynamics.
+
+---
 
 ## 7. Sensitivity Analysis
-### Observations
+Each parameter is varied by ±20%.
+
+### Observed Effects
+- Increasing **CL** → faster elimination  
+- Increasing **Vc** → lower peak concentration  
+- Increasing **Vp** → longer tail  
+- Increasing **Q** → faster exchange between compartments  
+<br>
 ### Interpretation
+- **CL** controls overall decay rate  
+- **Vp** strongly influences long-term behavior  
+- **Q** affects distribution speed  
+
+---
 
 ## 8. Testing
+Testing is implemented using `pytest`.
+
+Tests include:
+- ODE correctness  
+- simulation validity  
+- validation metric accuracy  
+- sensitivity calculations  
+
+Run tests with:
+
+```bash
+pytest
+```
 
 ## 9. Limitations
+- No direct fitting to experimental data
+- Assumes constant parameters
+- Does not include nonlinear metabolism
+- Simplified two-compartment model
 
+---
 
 ## 10. Usage
+1. In order to run this project please setup the repo by copying the SSH key and running this command on bash:
+```bash
+git clone {your SSH Key}
+```
+2. One the repo has been cloned please open up the repo by running:
+```bash
+cd {your repo}
+```
+3. In order to run the project please use this command:
+```bash
+MPLBACKEND=TkAgg python src/main.py
+```
 
+---
 
 ## 11. Dependencies
+The list of libraries that are included inside of this code are:
+- numpy
+- scipy
+- matplotlib
+- pytest
 
+In order to install these please run this command into bash:
+```bash
+pip install numpy scipy matplotlib pytest
+```
+
+---
 
 ## 12. References
+- Siddoway et al. (1996), Clinical Pharmacology & Therapeutics
+- Brodan et al. (1982), Journal of Cardiovascular Pharmacology
