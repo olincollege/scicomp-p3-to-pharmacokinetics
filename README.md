@@ -239,5 +239,5 @@ pip install numpy scipy matplotlib pytest
 ---
 
 ## 12. References
-- Siddoway et al. (1996), Clinical Pharmacology & Therapeutics
-- Brodan et al. (1982), Journal of Cardiovascular Pharmacology
+- **Primary paper**: Siddoway, L.A. et al. "Population pharmacokinetics of intravenous amiodarone in patients with refractory ventricular tachycardia/fibrillation." Clinical Pharmacology & Therapeutics, 1996. PMID: 8877675.
+- **Supporting paper**: Brodan, V. et al. "Pharmacokinetics of Amiodarone in Man." Journal of Cardiovascular Pharmacology, 1982.
